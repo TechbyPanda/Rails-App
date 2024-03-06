@@ -1,0 +1,37 @@
+<h1 class="text-2xl  text-center my-4 font-bold">All Blog Posts</h1>
+
+<%= form_tag(all_posts_path, method: :get) do %>
+  <div class="flex justify-center mb-4">
+    <div class="w-full max-w-sm flex items-center">
+      <%= text_field_tag :q, params[:q], class: "border rounded px-2 py-1 w-full mr-2", placeholder: "Search posts..." %>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+    </div>
+  </div>
+<% end %>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <% @posts.each do |post| %>
+      <div class="mb-4 bg-white rounded-lg shadow p-4">
+        <h3 class="text-lg font-medium text-gray-800 mb-2"><%= post.title %></h3>
+        <label for="publish-switch-<%= post.id %>" class="inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="publish-switch-<%= post.id %>" value="<%= post.id %>" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" <%= post.published ? 'checked' : '' %>>
+          <span class="ml-2 text-sm font-medium text-gray-600">Published</span>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const checkboxes = document.querySelectorAll(".publish-switch");
+    console.log(checkboxes)
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", function() {
+        console.log("this.form")
+      });
+    });
+  });
+</script>

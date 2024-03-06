@@ -19,6 +19,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def all_posts
+    @search_term = params[:q]
+    if @search_term.present?
+      @posts = Post.where("title LIKE ? OR body LIKE ?", "%#{@search_term}%", "%#{@search_term}%")
+    else
+      @posts = Post.all
+    end
+  end
+  
   def edit
   end
 
