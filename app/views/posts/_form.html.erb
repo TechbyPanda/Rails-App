@@ -1,0 +1,33 @@
+<%= form_with model: post do |form| %>
+
+    <div class="container mx-auto max-w-sm">
+      <div class="bg-white rounded-lg shadow px-4 py-5">
+        <div class="mb-4">
+          <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+          <%= form.text_field :title, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+          <% post.errors.full_messages_for(:title).each do |message| %>
+            <div class="text-red-500 text-xs mb-2"><%= message %></div>
+          <% end %>
+        </div>
+  
+        <div class="mb-4">
+          <%= form.label :body, class: "block text-sm font-medium text-gray-700" %>
+          <%= form.text_area :body, class: "mt-1 block w-full h-40 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500", rows: 6 %>
+          <% post.errors.full_messages_for(:body).each do |message| %>
+            <div class="text-red-500 text-xs mb-2"><%= message %></div>
+          <% end %>
+        </div>
+  
+        <div class="flex mb-4 items-center">
+          <%= form.label :published, class: "inline-flex items-center text-sm font-medium text-gray-700 mr-2" %>
+          <%= form.check_box :published, class: "w-5 h-5 text-indigo-600 border border-gray-300 rounded-md focus:ring-indigo-500" %>
+        </div>
+  
+        <div class="text-right">
+          <%= form.submit "Save", class: "inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %>
+        </div>
+      </div>
+    </div>
+  
+  <% end %>
+  
