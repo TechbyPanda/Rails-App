@@ -1,0 +1,15 @@
+<% if @messages.present? %>
+  <h2>Recent Messages from Slack</h2>
+  <ul>
+    <% @messages.each do |message| %>
+      <li>
+        <span class="author">
+          <%= message['user'] ? "@#{message['user']}" : 'Unknown' %>
+        </span>
+        : <%= message['text'] %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= flash[:alert] %></p>
+<% end %>

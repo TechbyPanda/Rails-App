@@ -1,0 +1,11 @@
+<% if flash[:notice].present? %>
+  <p class="text-blue-500 text-center mb-4"><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert].present? %>
+  <p class="text-red-500 text-center mb-4"><%= flash[:alert] %></p>
+<% end %>
+
+<% if flash[:success].present? %>
+  <p class="text-green-800 text-center mb-4"><%= flash[:success] %></p>
+<% end %>

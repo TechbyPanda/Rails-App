@@ -49,6 +49,16 @@ class PostsController < ApplicationController
   def show
   end
 
+  def publish
+    @post = Post.find(params[:id])
+
+    if @post.update(published: !@post.published)
+      render json: { success: true, message: "Post published", data: @post }, status: :ok
+    else
+      render json: { success: false, message: @post.errors.full_messages.join(', ') }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_post
