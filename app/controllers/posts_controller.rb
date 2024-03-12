@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @posts = Post.published.order(created_at: :desc)
   end
 
+  def posts_table
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
   end
