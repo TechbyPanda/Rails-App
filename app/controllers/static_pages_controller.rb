@@ -27,4 +27,10 @@ class StaticPagesController < ApplicationController
     
         # @messages = messages  # Assign messages to an instance variable for the view
     end
+
+    def  register
+    end
+
+    def login
+    end
 end

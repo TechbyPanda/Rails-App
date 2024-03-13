@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'auths/register'
+  get 'auths/login'
   resources :users
   root "static_pages#home"
   get "/all_posts", to: 'posts#all_posts'
