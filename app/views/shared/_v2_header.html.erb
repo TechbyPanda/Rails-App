@@ -1,0 +1,11 @@
+<header class="main_head">
+    <h2 class="first_heading">Your thoughts matter too.</h2>
+    <h1 class="second_heading">Read, write, connect.</h1>
+    <nav class="main_nav">
+        <% filtered_routes.each do |route| %>
+            <a href="<%= route[:link] %>" class="nav_menu">
+                <%= route[:name] %>
+            </a>
+        <% end %>
+    </nav>
+</header>

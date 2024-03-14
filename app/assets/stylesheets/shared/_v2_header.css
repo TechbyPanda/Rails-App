@@ -1,0 +1,36 @@
+.main_head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0px;
+}
+
+.first_heading{
+    font-size: 26px;
+    letter-spacing: 8px;
+    word-spacing: 18px;
+}
+
+.second_heading{
+    font-size: 54px;
+    letter-spacing: 8px;
+    word-spacing: 18px;
+}
+
+.main_nav{
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_menu{
+    padding: 8px 18px;
+    border-left: 1px solid black;
+}
+
+.nav_menu:last-of-type{
+    border-right: 1px solid black;
+}
