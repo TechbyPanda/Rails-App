@@ -32,11 +32,31 @@
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
+    font-size: 12px;
+    color: rgb(138, 135, 135);
 }
 
-.post-content .option .time{
+.option-left, .option-right{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.option-right{
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.option-right:hover{
+    background-color: rgb(253, 221, 226);
+    color: rgb(247, 106, 129);
+}
+
+.time{
     color: rgba(97, 97, 97, 0.76);
     display: flex;
     align-items: center;
     font-size: 12px;
+    margin-bottom: 5px;
 }
