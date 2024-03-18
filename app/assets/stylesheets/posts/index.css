@@ -1,0 +1,42 @@
+.posts-container{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.post-card{
+    border: 1px solid black;
+}
+
+.post-content{
+    padding: 10px;
+}
+
+.post-content .title{
+    font-size: 18px;
+}
+
+.post-content .title:hover{
+    color: rgb(0, 119, 255);
+}
+
+.post-content .body{
+    margin: 5px 0px;
+    color: rgb(97, 97, 97);
+    font-size: 14px;
+}
+
+.post-content .option{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-content .option .time{
+    color: rgba(97, 97, 97, 0.76);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
