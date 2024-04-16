@@ -1,7 +1,12 @@
+section{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
 .posts-container{
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 1rem;
 }

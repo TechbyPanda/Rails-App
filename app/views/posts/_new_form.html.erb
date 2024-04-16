@@ -1,0 +1,18 @@
+<%= form_with model: post do |f| %>
+    <div class="input-field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div class="input-field">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 6 %>
+    </div>
+    <div class="input-checkbox">
+        <%= f.check_box :published %>
+        <%= f.label :published %>
+    </div>
+
+    <div>
+        <%= f.submit "Save", class: "btn btn-violet"%>
+    </div>
+<% end %>

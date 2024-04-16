@@ -1,24 +1,29 @@
-<div class="posts-container">
-    <% @posts.each do |post| %>
-        <div class="post-card">
-            <div class="post-content">
-                <div class="time">
-                    <svg class="fill-current mr-2 text-gray-400 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M1 2a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-4.115.503a1 1 0 01-1.059-.54l.503-4.114a1 1 0 01.836-.986H1zm6 9a1 1 0 011-1h.854a1 1 0 01.914.654l3.52 3.492a1 1 0 010 1.308l-3.52 3.492a1 1 0 01-.914.654H7a1 1 0 01-1-1zm5-5a1 1 0 011-1h.854a1 1 0 01.914.654l3.52 3.492a1 1 0 010 1.308l-3.52 3.492a1 1 0 01-.914.654H12a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    <%= time_ago_in_words(post.created_at) %> ago
-                </div>
-                <%= link_to post.title, post_path(post), class: "title" %>
-                <p class="body"><%= post.body.truncate(50) %></p>
-                <div class="option">
-                    <div class="option-left">
-                        <p>3 Views</p>
-                        <p>3 Comments</p>
+<section>
+    <%= link_to "Add Your Post ✏️", new_post_path, class: 'btn btn-violet' %>
+    <br/>
+    <br/>
+    <div class="posts-container">
+        <% @posts.each do |post| %>
+            <div class="post-card">
+                <div class="post-content">
+                    <div class="time">
+                        <svg class="fill-current mr-2 text-gray-400 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M1 2a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-4.115.503a1 1 0 01-1.059-.54l.503-4.114a1 1 0 01.836-.986H1zm6 9a1 1 0 011-1h.854a1 1 0 01.914.654l3.52 3.492a1 1 0 010 1.308l-3.52 3.492a1 1 0 01-.914.654H7a1 1 0 01-1-1zm5-5a1 1 0 011-1h.854a1 1 0 01.914.654l3.52 3.492a1 1 0 010 1.308l-3.52 3.492a1 1 0 01-.914.654H12a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <%= time_ago_in_words(post.created_at) %> ago
                     </div>
-                    <div class="option-right">
-                        <p>12</p>
-                        <%= image_tag("empty-heart.svg", alt: "Example SVG") %>
+                    <%= link_to post.title, post_path(post), class: "title" %>
+                    <p class="body"><%= post.body.truncate(50) %></p>
+                    <div class="option">
+                        <div class="option-left">
+                            <p>3 Views</p>
+                            <p>3 Comments</p>
+                        </div>
+                        <div class="option-right">
+                            <p>12</p>
+                            <%= image_tag("empty-heart.svg", alt: "Example SVG") %>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    <% end %>
-</div>
+        <% end %>
+    </div>
+</section>
